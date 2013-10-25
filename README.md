@@ -12,7 +12,7 @@ Installation
 Usage
 =====
 
-`mongorc` sits in front of `rc` and passes any config from MongoDB:
+`mongorc` sits in front of `rc` and passes any config from MongoDB as a default. NOTE: this means that MongoDB config is lowest-precedent to rc.
 
 ```javascript
 
