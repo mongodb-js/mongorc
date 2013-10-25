@@ -53,6 +53,8 @@ node index.js \
     --configCollection configuration`
 ```
 
+Because `mongorc` sits in front of `rc`, all the standard `rc` configuration methods will still work. So `--config` flag, environment variables, CLI options, etc.
+
 Tests
 =====
 
