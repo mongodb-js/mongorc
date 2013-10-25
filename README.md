@@ -18,6 +18,14 @@ Usage
 
 var mongorc = require('mongorc')
 
+mongorc(options, defaultoptions, callback)
+
+```
+
+```javascript
+
+var mongorc = require('mongorc')
+
 var MONGODB_URL = process.env.MONGODB_URL || "localhost:27017/mydb"
 
 mongorc({name:"myApp", configUrl:MONGODB_URL}, {foo:123}, function(err, config) {
