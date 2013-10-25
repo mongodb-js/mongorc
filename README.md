@@ -58,7 +58,7 @@ Example of CLI arguments for an application using `mongorc`:
 node index.js \
     --configUrl localhost:27017/myapp \
     --configQuery '{"name":"myconfig"}' \
-    --configCollection configuration`
+    --configCollection configuration
 ```
 
 Because `mongorc` sits in front of `rc`, all the standard `rc` configuration methods will still work. So `--config` flag, environment variables, CLI options, etc.
