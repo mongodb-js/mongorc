@@ -42,7 +42,16 @@ CLI arguments:
 Example of CLI arguments for an application using `mongorc`:
 
 
-`node index.js --configUrl localhost:27017/myapp --configQuery '{"name":"myconfig"}' --configCollection configuration`
+```bash
+# read config from:
+#   DB at localhost:27017/myapp
+#   Collection name myconfig
+#   Document matching query {name: "myconfig"}
+node index.js \
+    --configUrl localhost:27017/myapp \
+    --configQuery '{"name":"myconfig"}' \
+    --configCollection configuration`
+```
 
 Tests
 =====
