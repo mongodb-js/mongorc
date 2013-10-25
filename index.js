@@ -18,7 +18,12 @@ module.exports = function(opts, defaultConfig, cb) {
   // Database URL to read config from.
   var configUrl = argv.configUrl || opts.configUrl
   // Query to findOne the config with. Defaults to empty.
-  var configQuery = argv.configQuery || opts.configQuery || {}
+  var configQuery
+  try {
+    configQuery = JSON.parse(argv.configQuery)
+  } catch(e) {
+    configQuery = opts.configQuery || {}
+  }
 
   var db = null
 
@@ -51,9 +56,8 @@ module.exports = function(opts, defaultConfig, cb) {
 
 // If run from CLI by tests
 if (require.main === module) {
-  module.exports({name:"mongorctest"}, {}, function(err, config) {
+  module.exports({name:"mongorctest"}, {override:123}, function(err, config) {
     if (err) throw err
-    console.log(config)
-    process.exit(1)
+    console.log(JSON.stringify(config, null, '\t'))
   })
 }
