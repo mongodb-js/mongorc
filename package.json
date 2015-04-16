@@ -1,26 +1,32 @@
 {
   "name": "mongorc",
-  "version": "0.1.0",
-  "description": "RC but also can read config from MongoDB",
-  "main": "index.js",
+  "description": "Work with ~/.mongorc.js programmatically.",
+  "version": "0.0.0",
   "scripts": {
-    "test": "./node_modules/.bin/mocha -R tap"
+    "check": "jshint",
+    "test": "mocha",
+    "ci": "npm run check && npm test",
+    "postinstall": "bin/postinstall.js"
   },
-  "keywords": [
-    "rc",
-    "config"
-  ],
-  "author": "Niall O'Higgins <niallo@frozenridge.co>",
-  "license": "BSD-2-Clause",
+  "bin": {
+    "mongorc": "bin/mongorc.js"
+  },
+  "homepage": "http://mongodb-js.github.io/mongorc",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mongodb-js/mongorc.git"
+  },
   "dependencies": {
-    "rc": "~0.3.1",
-    "mongoskin": "~0.6.0",
-    "optimist": "~0.6.0",
-    "lodash": "~2.2.1"
+    "fs-extra": "^0.18.1",
+    "untildify": "^2.0.0"
   },
   "devDependencies": {
-    "chai": "~1.8.1",
-    "mocha": "~1.13.0",
-    "async": "~0.2.9"
-  }
+    "jshint": "^2.6.3",
+    "mocha": "^2.2.1",
+    "pre-commit": "^1.0.6"
+  },
+  "license": "Apache 2",
+  "precommit": [
+    "check"
+  ]
 }
